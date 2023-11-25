@@ -9,3 +9,15 @@
 body {
   @apply font-dm-sans;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input:focus {
+  outline: none;
+}

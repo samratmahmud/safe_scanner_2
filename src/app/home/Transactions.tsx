@@ -23,7 +23,7 @@ const value = [
 function Transactions() {
   return (
     <section>
-      <div className="container mb-36">
+      <div className="container mb-32">
         <div className="flex items-center gap-4 mb-9">
           <div>
             <img src="/images/Group 56.svg" alt="" />
@@ -128,7 +128,7 @@ function Transactions() {
             </div>
           </div>
         </div>
-        <div>
+        <div className="bg-stone-800/5 p-4 rounded-md">
           <h2 className="text-base tracking-normal text-white font-medium mb-5">
             Confirmations
           </h2>
@@ -150,14 +150,14 @@ function Transactions() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-3 gap-2 mb-2">
             {Array.from({length: 9}).map((_, index) => (
               <div
                 key={index}
-                className="flex flex-col gap-4 bg-black rounded-md p-4"
+                className="flex flex-col gap-4 bg-stone-600/50 rounded-md p-4"
               >
                 <div className="flex items-center justify-between">
-                  <div className="flex gap-1 items-center">
+                  <div className="flex gap-1 items-center px-2 py-1 bg-stone-900 rounded-md">
                     <div>
                       <img src="/images/clock.svg" alt="" />
                     </div>
@@ -165,7 +165,7 @@ function Transactions() {
                       Signature Pending
                     </div>
                   </div>
-                  <div>
+                  <div role="button">
                     <img src="/images/button.svg" alt="" />
                   </div>
                 </div>
@@ -184,10 +184,10 @@ function Transactions() {
                     </div>
                   </div>
                   <div className="flex gap-2">
-                    <div className="p-1.5">
+                    <div className="p-1.5" role="button">
                       <img src="/images/content-copy.svg" alt="" />
                     </div>
-                    <div className="p-1.5">
+                    <div className="p-1.5" role="button">
                       <img src="/images/open-in-new.svg" alt="" />
                     </div>
                   </div>
@@ -201,6 +201,106 @@ function Transactions() {
                       Sign Now
                     </div>
                   </button>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-3 gap-2">
+            {...Array.from({length: 3}).map((_, index) => (
+              <div
+                key={index}
+                className="flex flex-col gap-4 bg-stone-600/50 rounded-md p-4"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center px-2 py-1">
+                    <div>
+                      <img src="/images/check-circle.svg" alt="" />
+                    </div>
+                    <div className="text-md tracking-normal font-medium text-primary-400">
+                      Signed
+                    </div>
+                  </div>
+                  <div role="button">
+                    <img src="/images/button.svg" alt="" />
+                  </div>
+                </div>
+                <div className=" flex justify-between items-center">
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-center gap-1">
+                      <div>
+                        <img src="/images/account-key 1.svg" alt="" />
+                      </div>
+                      <div className="text-xs uppercase text-neutral-400">
+                        Owner 2
+                      </div>
+                    </div>
+                    <div className="text-base text-gray-300 font-medium tracking-normal">
+                      0x242a…6b96
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <div className="p-1.5" role="button">
+                      <img src="/images/content-copy.svg" alt="" />
+                    </div>
+                    <div className="p-1.5" role="button">
+                      <img src="/images/open-in-new.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div className=" flex justify-between items-center">
+                  <div className="flex flex-col gap-1">
+                    <div className="text-xs uppercase text-neutral-400">
+                      Owner 2
+                    </div>
+                    <div className="text-base text-gray-300 font-medium tracking-normal">
+                      0x242a…6b96
+                    </div>
+                  </div>
+                  <div className="p-1.5" role="button">
+                    <img src="/images/content-copy.svg" alt="" />
+                  </div>
+                </div>
+                <div className=" flex justify-between items-center">
+                  <div className="flex flex-col gap-1">
+                    <div className="text-xs uppercase text-neutral-400">
+                      transaction Hash
+                    </div>
+                    <div className="text-base text-gray-300 font-medium tracking-normal">
+                      null
+                    </div>
+                  </div>
+                  <div className="p-1.5" role="button">
+                    <img src="/images/content-copy.svg" alt="" />
+                  </div>
+                </div>
+                <div className=" flex justify-between items-center">
+                  <div className="flex flex-col gap-1">
+                    <div className="text-xs uppercase text-neutral-400">
+                      signature
+                    </div>
+                    <div className="text-base text-gray-300 font-medium tracking-normal max-w-[285px]">
+                      0x105c029d5d52f58b8afbb3b87dd
+                      4b344c0ccca26b0a97bbf5ee09ebf
+                      66dd136c40e61d77b2ab17fd3ff88
+                      e8c447d9d40450a8d4cd98656b987 e856e80899104f1c
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <div className="p-1.5 flex-shrink-0" role="button">
+                      <img src="/images/content-copy.svg" alt="" />
+                    </div>
+                    <div className="p-1.5 flex-shrink-0" role="button">
+                      <img src="/images/open-in-new.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <div className="text-xs uppercase text-neutral-400">
+                    signature type
+                  </div>
+                  <div className="text-base text-gray-300 font-medium tracking-normal">
+                    EOA
+                  </div>
                 </div>
               </div>
             ))}

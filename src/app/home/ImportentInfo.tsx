@@ -4,54 +4,52 @@ import React from "react";
 
 const feedback = [
   {
-    thumbneil1: "/images/Frame 107.png",
     title: "MVP offers address search for wallet balance and activity.",
   },
   {
-    thumbneil1: "/images/Frame 107 (1).png",
     title: "Smart contract execution history is visible and searchable.",
   },
   {
-    thumbneil1: "/images/Frame 107 (2).png",
-    title: "Smart contract execution history is visible and searchable.",
+    title: "Explorer MVP simplifies blockchain analytics for users.",
   },
   {
-    thumbneil1: "/images/dot.png",
-    title: "Smart contract execution history is visible and searchable.",
+    title: "Users gain insight into decentralized network operations.",
   },
 ];
 
-const buttonProps = [
+const brands = [
   {
-    thumbneil: "/images/Group 52.svg",
+    icon: "/images/Group 52.svg",
     title: "Optimism",
+    isNew: true,
   },
   {
-    thumbneil: "/images/Group 52.svg",
+    icon: "/images/Group 52.svg",
     title: "Optimism Goerli",
+    isNew: true,
   },
   {
-    thumbneil: "/images/Group 53.svg",
+    icon: "/images/Group 53.svg",
     title: "Ethereum Mainnet",
   },
   {
-    thumbneil: "/images/Group 53.svg",
+    icon: "/images/Group 53.svg",
     title: "Ethereum Goerli",
   },
   {
-    thumbneil: "/images/Group 54.svg",
+    icon: "/images/Group 54.svg",
     title: "Polygon",
   },
   {
-    thumbneil: "/images/Group 54.svg",
+    icon: "/images/Group 54.svg",
     title: "Polygon Mumbai",
   },
   {
-    thumbneil: "/images/Group 55.svg",
+    icon: "/images/Group 55.svg",
     title: "Arbitrum",
   },
   {
-    thumbneil: "/images/Group 55.svg",
+    icon: "/images/Group 55.svg",
     title: "Arbitrum Testnet",
   },
 ];
@@ -71,29 +69,34 @@ const HelpCenter = [
   },
 ];
 
-function Features() {
+function ImportentInfo() {
   return (
     <section className="container mb-24">
       <div className="grid grid-cols-3 gap-6">
-        <div className="p-7 bg-stone-800/5">
+        <div className="p-10 bg-stone-800/5 rounded-md">
           <h2 className="text-xl font-medium text-white mb-1">Multi Chain</h2>
           <div className="text-md text-slate-300 mb-6">
             Supported blockchains & tech behind
           </div>
-          <div className="flex flex-wrap gap-3 mb-6">
-            {buttonProps.map((item, index) => (
-              <div key={index} className="">
-                <Link
-                  href="/"
-                  className="bg-white flex items-center gap-2 py-1.5 pl-1.5 pr-3 rounded-full"
-                >
-                  <div>
-                    <img src={item.thumbneil} alt="" />
-                  </div>
-                  <div className="lg:text-md text-md font-medium text-stone-900 tracking-normal">
-                    {item.title}
-                  </div>
-                </Link>
+          <div className="flex flex-wrap gap-3 mb-8">
+            {brands.map(({icon, title, isNew}, index) => (
+              <div
+                key={index}
+                className="bg-white flex items-center gap-2 py-1.5 pl-1.5 pr-3 rounded-full relative flex-grow sm:flex-grow-0"
+                role="button"
+              >
+                {isNew && (
+                  <span className="absolute top-0 -right-2 bg-primary-500 py-1 px-2 rounded-full text-white text-xs tracking-normal -translate-y-1/2">
+                    New
+                  </span>
+                )}
+
+                <div>
+                  <img className="w-5 h-5" src={icon} alt="" />
+                </div>
+                <div className="text-md tracking-normal font-medium text-stone-900">
+                  {title}
+                </div>
               </div>
             ))}
           </div>
@@ -108,44 +111,40 @@ function Features() {
               <img src="/images/safe.svg" alt="" />
             </Link>
           </div>
-          <div className="flex">
+          <Link href="" className="flex">
             <Buttons
               name="Read More About Tech"
               thumbneil="/images/file-code.svg"
-              theme="dark"
+              variant="outlined"
             />
-          </div>
+          </Link>
         </div>
-        <div className="p-10 bg-stone-800/5">
+        <div className="p-10 bg-stone-800/5 rounded-md">
           <div className="text-xl font-medium text-white mb-1">Features</div>
           <div className="text-md text-slate-300 mb-5">
             See our latest features and leave feedback
           </div>
-          <div className="flex flex-col gap-1 mb-5">
-            {feedback.map((item, index) => (
-              <div key={index} className="flex gap-2">
-                <div className="flex items-center flex-shrink-0">
-                  <img
-                    className="-mt-1.5 flex-shrink-0"
-                    src={item.thumbneil1}
-                    alt=""
-                  />
-                </div>
-                <div className="text-base font-medium text-slate-300">
-                  {item.title}
-                </div>
+          <div className="mb-5 flex flex-col">
+            {feedback.map(({title}, index) => (
+              <div
+                key={index}
+                className="text-base leading-[155%] tracking-normal font-medium text-slate-300 relative pl-7 pb-3.5 last:pb-0 group z-0"
+              >
+                <span className="absolute w-3.5 h-3.5 left-0 top-0 group-first:bg-primary-400 rounded-full border-2 border-primary-400 z-20 bg-black translate-y-1/2" />
+                <span className="absolute h-full w-2 border-r-2 group-first:border-solid border-dotted border-primary-400 left-0 group-last:hidden z-10 translate-y-2"></span>
+                {title}
               </div>
             ))}
           </div>
-          <div className="flex">
+          <Link href="" className="flex">
             <Buttons
               thumbneil="/images/map-marker-path.svg"
               name="See Roadmap"
-              theme="dark"
+              variant="outlined"
             />
-          </div>
+          </Link>
         </div>
-        <div className="p-10 bg-stone-800/5">
+        <div className="p-10 bg-stone-800/5 rounded-md">
           <div className="text-xl font-medium text-white mb-1">Help</div>
           <div className="text-md text-slate-300 mb-5">
             Learn how to use Scanner more effective
@@ -156,7 +155,7 @@ function Features() {
                 <div>
                   <img src={thumbnail} alt="" />
                 </div>
-                <div className="text-base tracking-normal text-white">
+                <div className="text-base leading-[155%] tracking-normal text-white">
                   {title}
                 </div>
               </div>
@@ -166,7 +165,7 @@ function Features() {
             <Buttons
               thumbneil="/images/book-open-blank-variant.svg"
               name="Open Help Center"
-              theme="dark"
+              variant="outlined"
             />
           </div>
         </div>
@@ -175,4 +174,4 @@ function Features() {
   );
 }
 
-export default Features;
+export default ImportentInfo;
