@@ -6,17 +6,17 @@ import SearchResult from "./SearchResult";
 const results = [
   {
     meta: {
-      icon: "/images/chip (1).svg",
+      icon: "/images/Group 78.svg",
       name: "Ethereum Mainnet",
     },
     wallets: [
       {
-        icon: "/images/Group 69.svg",
+        icon: "/images/Group 80 (1).svg",
         name: "WalletName",
         token: "matic:0x27ce...857e",
       },
       {
-        icon: "/images/Group 69.svg",
+        icon: "/images/Group 80 (1).svg",
         name: "WalletName",
         token: "matic:0x27ce...857e",
       },
@@ -24,13 +24,13 @@ const results = [
   },
   {
     meta: {
-      icon: "/images/chip (2).svg",
+      icon: "/images/Group 79.svg",
       name: "Ethereum Mainnet",
     },
 
     wallets: [
       {
-        icon: "/images/Group 69.svg",
+        icon: "/images/Group 80 (1).svg",
         name: "WalletName",
         token: "matic:0x27ce...857e",
       },
@@ -38,12 +38,12 @@ const results = [
   },
   {
     meta: {
-      icon: "/images/Group 77.svg",
+      icon: "/images/Group 80.svg",
       name: "Ethereum Mainnet",
     },
     wallets: [
       {
-        icon: "/images/Group 69.svg",
+        icon: "/images/Group 80 (1).svg",
         name: "WalletName",
         token: "matic:0x27ce...857e",
       },
@@ -54,7 +54,7 @@ const results = [
 function SearchPanel() {
   return (
     <div className="absolute left-0 right-0">
-      <div className="bg-slate-900 border-2 md:border-white border-gray-400 rounded-md p-4 w-full m-auto">
+      <div className="bg-stone-900 border-2 md:border-white/40 border-gray-400 rounded-md p-4 w-full m-auto">
         {results.map(({meta, wallets}, index) => (
           <SearchResult meta={meta} wallets={wallets} key={index} />
         ))}

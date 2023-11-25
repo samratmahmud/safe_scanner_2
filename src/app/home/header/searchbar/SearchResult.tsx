@@ -34,7 +34,7 @@ function SearchResult(props: SearchResultProps) {
         <div className="pr-3">
           <img
             className={`duration-200 ${isOpen ? "" : "rotate-180"}`}
-            src="/images/Group 76.svg"
+            src="/images/Group 79 (1).svg"
             alt=""
           />
         </div>
@@ -45,11 +45,11 @@ function SearchResult(props: SearchResultProps) {
             <div
               role="button"
               key={index}
-              className="flex gap-3 items-center justify-between bg-emerald-900 py-3 px-4 rounded-md"
+              className="flex gap-3 items-center justify-between bg-stone-800/5 py-3 px-4 rounded-md"
             >
               <div className="flex gap-3 items-center">
                 <div>
-                  <img src={icon} alt="" />
+                  <img className="rounded-md" src={icon} alt="" />
                 </div>
                 <div className="text-md text-white">
                   <p className="font-medium mb-1">{name}</p>
